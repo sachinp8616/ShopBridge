@@ -1,0 +1,24 @@
+<div class="row mt-5 align-items-center justify-content-center" style="height: 80vh;">
+    <div class="col-md-5 ">
+        <div class="box shadow rounded circle p-5">
+            <h3 class="mb-5 text-center">ShopBridge Admin Portal</h3>
+            <div class="form-group mb-3">
+                <label for="">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="email"
+                    [ngClass]="errors.email ? 'is-invalid' : ''" />
+                <div class="invalid-feedback">{{ errors.email }}</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Password</label>
+                <input type="password" [(ngModel)]="password" name="password" class="form-control"
+                    [ngClass]="errors.password ? 'is-invalid' : ''" />
+                <div class="invalid-feedback">{{ errors.password }}</div>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button" (click)="onSubmit()">
+                    SignIn
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

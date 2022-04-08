@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">ShopBridge</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navtoggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navtoggle">
+            <ul class="navbar-nav ms-auto" *ngIf="!loggedIn">
+                <li class="nav-item">
+                    <a class="nav-link ps-0" routerLink="/" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Sign In</a>
+                </li>
+            </ul>
+            <a class="nav-link ms-auto ps-0 text-light" *ngIf="loggedIn"><span class="me-2"> {{ userInfo.name }}</span>
+                <i class="fa fa-sign-out-alt" aria-hidden="true" (click)="onSignOut()"></i>
+            </a>
+        </div>
+    </div>
+</nav>

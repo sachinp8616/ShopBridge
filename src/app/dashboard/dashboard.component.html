@@ -1,0 +1,27 @@
+<div class=" mt-5 d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="gotoProductForm()">Add Item</button>
+</div>
+
+<div class="row mt-5 d-flex justify-content-center">
+    <div class="col-sm-12 col-md-10 col-lg-6">
+        <div class="card mb-5" *ngFor="let product of products | paginate: { itemsPerPage: 2, currentPage: p }">
+            <div class="row">
+                <div class="col-md-6">
+                    <img [src]="product.imgUrl" class="card-img-top" alt="..." width="200" style="height: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>{{ product.title }}</h4>
+                        <h3>{{ product.price | currency:'INR':'symbol-narrow' }}</h3>
+                        <p class="card-text">{{product.desc}}</p>
+                        <div class="d-flex justify-content-end">
+                            <i class="fas fa-edit mx-4 text-primary" (click)="onEditProduct(product.key)"></i>
+                            <i class="fas fa-trash text-danger" (click)="onDeleteProduct(product.key)"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event" class="float-right mt-5"></pagination-controls>
+    </div>
+</div>
