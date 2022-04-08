@@ -13,7 +13,7 @@ export class ProductFormComponent implements OnInit {
 
   product: any = {
     title: '',
-    price: '',
+    price: 0,
     desc: '',
     imgUrl: '',
   }
