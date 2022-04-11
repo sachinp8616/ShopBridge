@@ -19,8 +19,8 @@ const validateSigninInput = (data: any) => {
         errors.password = "Password must have min 6 & max 15 characters."
     }
 
-    if(!validator.matches(data.password, /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{6,}$/)){
-        errors.password = 'Password must have at least one Special char, number, small letter, caps letter.'
+    if(validator.isEmpty(data.password)){
+        errors.password = "Password field is required.";
     }
 
     return{

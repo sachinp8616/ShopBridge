@@ -11,8 +11,8 @@
                             <img [src]="
                             product.imgUrl ||
                                   'http://www.gravatar.com/avatar/61dc3c45c69df368f1a4452b3c4843bb?s=200&r=pg&d=mm'
-                                " alt="" class="img-fluid rounded form-control" width="200" height="100" />
-                            <a class="d-block">Select Picture</a>
+                                " alt="" class="img-fluid rounded form-control" style="height: 100%;" />
+                            <a class="d-block">Upload Picture</a>
                         </label>
                         <input type="file" id="profileImg" class="form-control" accept="image/*" style="display: none"
                             (change)="onUpload($event)">
@@ -35,9 +35,8 @@
                             [ngClass]="{ 'is-invalid': pdesc.errors && pdesc.touched }"></textarea>
                         <div class="invalid-feedback">(Description is Required)</div>
                     </div>
-                    <button class="btn btn-primary" (click)="onCreateProduct()" [disabled]="!userPost.valid">{{id ?
-                        'Update
-                        Product': 'Add Product'}}</button>
+                    <button class="btn btn-primary" (click)="onCreateProduct()" [disabled]="!userPost.valid">
+                        {{id ? 'Update Product': 'Add Product'}}</button>
                 </form>
             </div>
         </div>
